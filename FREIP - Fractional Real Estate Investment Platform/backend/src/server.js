@@ -15,6 +15,9 @@ import investmentRoutes from './routes/investments.js';
 import transactionRoutes from './routes/transactions.js';
 import dashboardRoutes from './routes/dashboard.js';
 import adminRoutes from './routes/admin.js';
+import kycRoutes from './routes/kyc.js';
+import settingsRoutes from './routes/settings.js';
+import staffRoutes from './routes/staff.js';
 
 // Import middleware
 import { errorHandler } from './middleware/errorHandler.js';
@@ -50,6 +53,10 @@ app.use('/api/investments', investmentRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/kyc', kycRoutes);
+app.use('/api/settings', settingsRoutes);
+app.use('/api/staff', staffRoutes);
+
 
 // 404 handler
 app.use((req, res) => {
