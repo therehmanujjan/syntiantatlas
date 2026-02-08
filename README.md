@@ -1,45 +1,41 @@
-# SYNTIANT ATLAS Project
+# SYNTIANT ATLAS
 
-This repository contains the integrated DAO PropTech system with the following components:
+## Project Overview
+SYNTIANT ATLAS is a comprehensive platform integrating a fractional real estate investment system (FREIP) with a modern landing page and administrative capabilities.
 
-## Components
+### Components
+1. **Landing Page** (Port 3000)
+   - Modern Next.js frontend
+   - Showcase for properties and platform features
+   - Integrated with FREIP backend for registration
 
-1.  **Landing Page** (Port 3000)
-    *   Clone of daoproptech.com
-    *   Technologies: Next.js 14, Tailwind CSS
-    *   Location: `Landing page/`
+2. **FREIP System** (Fractional Real Estate Investment Platform)
+   - **Frontend** (Port 3001): Next.js dashboard for investors/sellers
+   - **Backend** (Port 5000): Node.js/Express API with PostgreSQL (Neon DB)
 
-2.  **FREIP System** (Port 3001 & 5000)
-    *   Fractional Real Estate Investment Platform
-    *   Frontend: Next.js (Port 3001) at `FREIP - Fractional Real Estate Investment Platform/frontend`
-    *   Backend: Express.js (Port 5000) at `FREIP - Fractional Real Estate Investment Platform/backend`
-
-3.  **Webinar's System**
-    *   (Under Development)
-    *   Location: `Webinar's System/`
-
-## How to Run Everything
-
-We have provided a startup script to launch all services at once.
+## Quick Start
 
 ### Prerequisites
-
-- Node.js (v16+)
+- Node.js (v18+)
 - npm
 
-### Quick Start
+### Installation & Run
+Run the all-in-one startup script to launch all services concurrently:
 
-1.  Open a terminal in the root `SYNTIANT ATLAS` folder.
-2.  Run the startup script:
-    ```bash
-    ./start_all.sh
-    ```
+```bash
+./start_all.sh
+```
 
 This will start:
-- Landing Page at **http://localhost:3000**
-- FREIP Frontend at **http://localhost:3001**
-- FREIP Backend at **http://localhost:5000** (Background service)
+- Landing Page: http://localhost:3000
+- FREIP Frontend: http://localhost:3001
+- FREIP Backend: http://localhost:5000
 
-## Integration
+## Database
+The project uses **Neon PostgreSQL**.
+- **Schema Setup:** `npm run setup-db` (in backend folder)
+- **Configuration:** Check `.env` files in `backend/`
 
-The **Sign Up** buttons on the Landing Page are now linked to `http://localhost:3001/register`, allowing seamless transition from the marketing site to the application.
+## Documentation
+- [Implementation Plan](IMPLEMENTATION_SUMMARY.md)
+- [API Documentation](API_DOCUMENTATION.md)
