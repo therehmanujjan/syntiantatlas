@@ -163,3 +163,6 @@ setInterval(() => {
         }
     }
 }, 60000); // Clean up every minute
+
+// Alias for backward compatibility
+export const authorize = requireRole;
