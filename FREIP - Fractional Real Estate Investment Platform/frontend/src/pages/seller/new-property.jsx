@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import { useAuthStore } from '../../store';
@@ -10,6 +10,7 @@ export default function NewProperty() {
   const token = useAuthStore((state) => state.token);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isClient, setIsClient] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -25,8 +26,16 @@ export default function NewProperty() {
     rental_yield: '',
   });
 
+  useEffect(() => {
+    setIsClient(true);
+    if (!token || user?.role !== 'seller') {
+      router.push('/login');
+    }
+  }, [token, user, router]);
+
+  if (!isClient) return null; // Prevent hydration mismatch
+
   if (!token || user?.role !== 'seller') {
-    router.push('/login');
     return null;
   }
 
