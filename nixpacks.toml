@@ -6,13 +6,13 @@ cmds = ["npm install --legacy-peer-deps"]
 
 [phases.build]
 cmds = [
-  "npx prisma generate",
+  "npm run db:generate",
   "cd packages/shared && npm run build || true",
   "cd apps/api && npm run build"
 ]
 
 [start]
-cmd = "cd apps/api && npm run start:prod"
+cmd = "cd apps/api && node dist/main"
 
 [variables]
 NODE_ENV = "production"

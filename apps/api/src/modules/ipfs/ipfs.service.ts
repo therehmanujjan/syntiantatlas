@@ -46,7 +46,7 @@ export class IpfsService {
     if (this.enabled) {
       try {
         const formData = new FormData();
-        const blob = new Blob([buffer]);
+        const blob = new Blob([new Uint8Array(buffer)]);
         formData.append('file', blob, filename);
 
         const response = await fetch(`${this.ipfsApiUrl}/api/v0/add`, {

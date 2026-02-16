@@ -99,7 +99,7 @@ async function bootstrap() {
   SwaggerModule.setup('api/docs', app, document);
 
   // Start
-  const port = configService.get<number>('API_PORT', 8080);
+  const port = configService.get<number>('PORT') || configService.get<number>('API_PORT', 8080);
   await app.listen(port);
   console.log(`Syntiant Atlas API running on port ${port}`);
   console.log(`Swagger docs: http://localhost:${port}/api/docs`);
