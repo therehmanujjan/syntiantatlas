@@ -19,7 +19,7 @@ export default function RewardsShopPage() {
         <p className="text-sm text-gray-500 max-w-md mb-8">
           Earn rewards through investments, referrals, and platform engagement.
           Redeem them for exclusive benefits, discounts, and more.
-          We're building something exciting — stay tuned!
+          We&apos;re building something exciting — stay tuned!
         </p>
 
         {/* Contact Support */}

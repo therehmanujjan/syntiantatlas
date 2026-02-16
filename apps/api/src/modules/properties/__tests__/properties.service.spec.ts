@@ -162,7 +162,7 @@ describe('PropertiesService', () => {
     it('should create a property with pending status', async () => {
       prisma.property.create.mockResolvedValue({ ...mockProperty, status: 'pending' });
 
-      const result = await service.create(
+      await service.create(
         {
           title: 'New Property',
           description: 'Description',
@@ -353,7 +353,7 @@ describe('PropertiesService', () => {
     it('should return pending properties ordered by creation date', async () => {
       prisma.property.findMany.mockResolvedValue([mockProperty]);
 
-      const result = await service.getPending();
+      await service.getPending();
 
       expect(prisma.property.findMany).toHaveBeenCalledWith(
         expect.objectContaining({

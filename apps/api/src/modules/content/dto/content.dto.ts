@@ -8,7 +8,7 @@ import {
   Min,
   MaxLength,
 } from 'class-validator';
-import { Type, Transform } from 'class-transformer';
+import { Type } from 'class-transformer';
 
 export class CreateContentDto {
   @IsString()

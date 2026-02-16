@@ -3,7 +3,6 @@ import {
   NotFoundException,
   ConflictException,
   ForbiddenException,
-  BadRequestException,
   Logger,
 } from '@nestjs/common';
 import * as bcrypt from 'bcryptjs';
@@ -407,7 +406,7 @@ export class UsersService {
   }
 
   private sanitize(user: any) {
-    const { passwordHash, ...rest } = user;
+    const { passwordHash: _, ...rest } = user;
     return rest;
   }
 }

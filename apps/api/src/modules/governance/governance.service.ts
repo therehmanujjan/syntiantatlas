@@ -192,7 +192,7 @@ export class GovernanceService {
     );
 
     // Create vote and update proposal counts in a transaction
-    const [vote] = await this.prisma.$transaction([
+    const [_vote] = await this.prisma.$transaction([
       this.prisma.governanceVote.create({
         data: {
           proposalId,

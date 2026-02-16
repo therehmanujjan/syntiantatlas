@@ -23,7 +23,7 @@ export default function NotFound() {
           Page Not Found
         </h1>
         <p className="text-gray-500 text-sm sm:text-base mb-8 max-w-sm mx-auto">
-          The page you are looking for doesn't exist or has been moved.
+          The page you are looking for doesn&apos;t exist or has been moved.
           Check the URL or navigate back to your dashboard.
         </p>
 

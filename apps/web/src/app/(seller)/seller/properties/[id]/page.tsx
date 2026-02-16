@@ -71,7 +71,7 @@ export default function SellerPropertyDetailPage() {
         </div>
         <h3 className="font-medium text-gray-900 mb-1">Property not found</h3>
         <p className="text-sm text-gray-500 mb-6">
-          This property may have been removed or you don't have access.
+          This property may have been removed or you don&apos;t have access.
         </p>
         <Link href="/seller/properties" className="btn-blue inline-flex items-center gap-2 !py-2.5 !px-4 text-sm">
           <FiArrowLeft /> Back to Properties
